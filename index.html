@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women's Day | Empowering Women 🌸</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Google Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS for Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full bg-pink-600/90 text-white shadow-md backdrop-blur-md z-50"
+    >
+      <div class="flex justify-between items-center px-6 py-4 md:px-12">
+        <!-- Logo -->
+        <div
+          class="text-lg sm:text-xl md:text-2xl font-bold cursor-pointer transition-transform duration-300 hover:scale-105 hover:text-pink-200 flex items-center gap-2"
+        >
+          Women's Day
+          <img
+            src="./logo-removebg-preview.png"
+            alt="Women's Day Logo"
+            class="h-12 sm:h-14 md:h-16 object-contain"
+          />
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 text-lg font-semibold">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#events" class="nav-link">Events</a>
+          <a href="#testimonials" class="nav-link">Empower</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-3xl focus:outline-none transition-transform duration-300 hover:scale-110"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        id="mobile-nav"
+        class="hidden fixed top-16 right-0 w-full bg-pink-700 text-white text-center py-6 flex flex-col space-y-5 shadow-lg transition-all duration-500 transform -translate-y-full"
+      >
+        <a href="#home" class="block hover:text-pink-300 transition">Home</a>
+        <a href="#about" class="block hover:text-pink-300 transition">About</a>
+        <a href="#events" class="block hover:text-pink-300 transition"
+          >Events</a
+        >
+        <a href="#testimonials" class="nav-link">Empower</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center text-center bg-cover bg-center bg-no-repeat"
+      style="
+        background-image: url('https://cdn.pixabay.com/photo/2016/07/11/15/43/woman-1509956_1280.jpg');
+      "
+    >
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white px-6"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold opacity-0 animate-fadeIn">
+          Celebrate Women. Empower Change.
+        </h1>
+
+        <p class="countdown text-lg mt-3"></p>
+
+        <button
+          onclick="celebrate()"
+          class="mt-5 px-6 py-3 bg-pink-500 text-white text-lg font-semibold rounded-md shadow-md transition duration-300 transform hover:scale-105 hover:bg-pink-600 focus:ring focus:ring-pink-400 animate-pulse"
+        >
+          🎉 Celebrate Women's Day!
+        </button>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section
+      data-aos="fade-in"
+      data-aos-duration="1000"
+      id="about"
+      class="text-center py-20 px-6 bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl shadow-xl transition-all duration-300"
+    >
+      <div class="max-w-5xl mx-auto">
+        <!-- Section Title -->
+        <h2
+          class="text-4xl font-extrabold text-pink-700 uppercase tracking-wider relative inline-block mb-8"
+        >
+          🌸 About Women's Day
+          <span
+            class="block w-3/5 h-1 bg-pink-600 mx-auto mt-2 rounded-md transition-all duration-300 hover:w-4/5"
+          ></span>
+        </h2>
+
+        <!-- About Text -->
+        <p
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          class="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium opacity-90"
+        >
+          International Women's Day is a global celebration of women's
+          achievements in social, economic, cultural, and political spheres.
+          It’s a day to honor progress, advocate for equality, and inspire
+          change.
+          <strong class="text-pink-700"
+            >Together, we can create a more inclusive and empowering world for
+            everyone.</strong
+          >
+        </p>
+
+        <!-- Cards Container -->
+        <div
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        >
+          <!-- Awareness Card -->
+          <div
+            class="group relative bg-white p-6 rounded-xl border-2 border-transparent shadow-md text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-pink-600"
+          >
+            <h3
+              class="text-pink-700 text-xl font-bold uppercase mb-3 group-hover:scale-110 transition-transform duration-200"
+            >
+              📢 Awareness
+            </h3>
+            <p class="text-gray-700">
+              Spreading knowledge about gender equality and women's rights.
+            </p>
+            <div
+              class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span
+                class="bg-pink-600 text-white text-lg p-2 rounded-full shadow-md"
+                >✨</span
+              >
+            </div>
+          </div>
+
+          <!-- Empowerment Card -->
+          <div
+            class="group relative bg-white p-6 rounded-xl border-2 border-transparent shadow-md text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-pink-600"
+          >
+            <h3
+              class="text-pink-700 text-xl font-bold uppercase mb-3 group-hover:scale-110 transition-transform duration-200"
+            >
+              🚀 Empowerment
+            </h3>
+            <p class="text-gray-700">
+              Encouraging leadership, education, and opportunities for women.
+            </p>
+            <div
+              class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span
+                class="bg-pink-600 text-white text-lg p-2 rounded-full shadow-md"
+                >✨</span
+              >
+            </div>
+          </div>
+
+          <!-- Global Impact Card -->
+          <div
+            class="group relative bg-white p-6 rounded-xl border-2 border-transparent shadow-md text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-pink-600"
+          >
+            <h3
+              class="text-pink-700 text-xl font-bold uppercase mb-3 group-hover:scale-110 transition-transform duration-200"
+            >
+              🌍 Global Impact
+            </h3>
+            <p class="text-gray-700">
+              Celebrating achievements and advocating for change worldwide.
+            </p>
+            <div
+              class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span
+                class="bg-pink-600 text-white text-lg p-2 rounded-full shadow-md"
+                >✨</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          onclick="celebrate()"
+          class="mt-10 bg-gradient-to-r from-pink-600 to-pink-700 text-white font-bold py-3 px-10 rounded-lg text-lg uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-lg focus:ring-4 focus:ring-pink-400 relative overflow-hidden"
+        >
+          💜 Join the Movement
+          <span
+            class="absolute inset-0 bg-white opacity-10 rounded-lg scale-0 transition-transform duration-500 active:scale-150"
+          ></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section
+      id="events"
+      class="bg-gradient-to-b from-pink-100 via-rose-200 to-pink-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-white py-16 px-6"
+    >
+      <div class="container mx-auto text-center">
+        <h2
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          class="text-3xl sm:text-4xl font-extrabold text-pink-700 dark:text-pink-400 mb-8 tracking-wide drop-shadow-md uppercase"
+        >
+          🎉 Women's Day Events
+        </h2>
+        <p
+          data-aos="fade-in"
+          data-aos-duration="1100"
+          class="text-lg sm:text-xl text-pink-900 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed md:leading-loose font-medium"
+        >
+          Celebrate and empower women with inspiring events, interactive
+          workshops, and captivating performances.
+        </p>
+
+        <!-- Events Grid -->
+        <div
+          class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto"
+        >
+          <!-- Event Card -->
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            class="group relative bg-white dark:bg-gray-900 p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 transform hover:-translate-y-3 hover:shadow-2xl hover:border-pink-500 dark:hover:border-pink-400 flex flex-col justify-between cursor-pointer overflow-hidden bg-opacity-80 backdrop-blur-lg"
+          >
+            <!-- Animated Border -->
+            <div
+              class="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-pink-500 dark:group-hover:border-pink-400 transition-all duration-300"
+            ></div>
+
+            <!-- Floating Icon -->
+            <div
+              class="text-5xl sm:text-6xl text-pink-600 dark:text-pink-400 mb-4 transition-all duration-300 group-hover:scale-110"
+            >
+              🌟
+            </div>
+
+            <!-- Content -->
+            <h3
+              class="text-pink-700 dark:text-pink-400 text-2xl sm:text-3xl font-extrabold uppercase tracking-wide group-hover:text-pink-800 dark:group-hover:text-pink-300 transition-colors duration-200"
+            >
+              Keynote Talks
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-md sm:text-lg leading-relaxed font-medium mt-3"
+            >
+              Hear from influential women leaders and change-makers who are
+              shaping the future.
+            </p>
+
+            <!-- Hover Effect Overlay -->
+            <div
+              class="absolute inset-0 bg-pink-500 dark:bg-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl"
+            ></div>
+          </div>
+
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            class="group relative bg-white dark:bg-gray-900 p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 transform hover:-translate-y-3 hover:shadow-2xl hover:border-pink-500 dark:hover:border-pink-400 flex flex-col justify-between cursor-pointer overflow-hidden bg-opacity-80 backdrop-blur-lg"
+          >
+            <div
+              class="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-pink-500 dark:group-hover:border-pink-400 transition-all duration-300"
+            ></div>
+
+            <div
+              class="text-5xl sm:text-6xl text-pink-600 dark:text-pink-400 mb-4 transition-all duration-300 group-hover:scale-110"
+            >
+              👩‍💼
+            </div>
+
+            <h3
+              class="text-pink-700 dark:text-pink-400 text-2xl sm:text-3xl font-extrabold uppercase tracking-wide group-hover:text-pink-800 dark:group-hover:text-pink-300 transition-colors duration-200"
+            >
+              Workshops
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-md sm:text-lg leading-relaxed font-medium mt-3"
+            >
+              Interactive skill-building sessions on leadership, career growth,
+              and self-empowerment.
+            </p>
+
+            <div
+              class="absolute inset-0 bg-pink-500 dark:bg-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl"
+            ></div>
+          </div>
+
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+            class="group relative bg-white dark:bg-gray-900 p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 transform hover:-translate-y-3 hover:shadow-2xl hover:border-pink-500 dark:hover:border-pink-400 flex flex-col justify-between cursor-pointer overflow-hidden bg-opacity-80 backdrop-blur-lg"
+          >
+            <div
+              class="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-pink-500 dark:group-hover:border-pink-400 transition-all duration-300"
+            ></div>
+
+            <div
+              class="text-5xl sm:text-6xl text-pink-600 dark:text-pink-400 mb-4 transition-all duration-300 group-hover:scale-110"
+            >
+              🎭
+            </div>
+
+            <h3
+              class="text-pink-700 dark:text-pink-400 text-2xl sm:text-3xl font-extrabold uppercase tracking-wide group-hover:text-pink-800 dark:group-hover:text-pink-300 transition-colors duration-200"
+            >
+              Cultural Performances
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-md sm:text-lg leading-relaxed font-medium mt-3"
+            >
+              Experience inspiring art, music, and dance performances showcasing
+              women's creativity.
+            </p>
+
+            <div
+              class="absolute inset-0 bg-pink-500 dark:bg-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirational Quotes Carousel Section -->
+    <div id="testimonials" class="carousel-container">
+      <h2 class="carousel-title">💪 Stay Strong, Women!</h2>
+
+      <!-- Carousel Wrapper -->
+      <div data-aos="fade-in" data-aos-duration="1000" class="carousel">
+        <div class="carousel-slide active">
+          <img
+            src="https://cdn.pixabay.com/photo/2024/02/04/18/27/woman-8552807_1280.jpg"
+            alt="Quote 1"
+          />
+          <div class="carousel-text">
+            You are stronger than you think, braver than you believe, and more
+            powerful than you know.
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://cdn.pixabay.com/photo/2019/08/14/13/45/woman-4405820_1280.jpg"
+            alt="Quote 2"
+          />
+          <div class="carousel-text">
+            Do not wait for permission to shine. You are born to stand out and
+            make a difference.
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/11/02/11/31/woman-8360350_1280.jpg"
+            alt="Quote 3"
+          />
+          <div class="carousel-text">
+            Rise like the sun—bold, fearless, and full of light.
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://cdn.pixabay.com/photo/2020/03/03/12/52/girl-4898696_1280.jpg"
+            alt="Quote 4"
+          />
+          <div class="carousel-text">
+            Your voice matters. Your dreams matter. YOU matter. Keep going!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="bg-pink-50 text-pink-900 px-6 py-12 text-center"
+    >
+      <h2
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        class="text-3xl font-semibold"
+      >
+        📩 Get in Touch
+      </h2>
+      <p
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        class="text-base max-w-md mx-auto mt-2"
+      >
+        Questions? Let's connect!
+      </p>
+
+      <form class="max-w-md mx-auto mt-6 space-y-4 text-left">
+        <input
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          type="text"
+          placeholder="Your Name"
+          class="input-field"
+        />
+        <input
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          type="email"
+          placeholder="Your Email"
+          class="input-field"
+        />
+        <textarea
+          placeholder="Your Message"
+          rows="4"
+          class="input-field"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700 transition"
+        >
+          📤 Send
+        </button>
+      </form>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="fixed bottom-5 right-5 md:bottom-8 md:right-8 bg-pink-600 text-white p-3 md:p-4 rounded-full shadow-md hover:bg-pink-700 transition duration-300 focus:ring-2 focus:ring-pink-500 focus:outline-none opacity-0 scale-90 transform translate-y-10 md:translate-y-0"
+      aria-label="Back to Top"
+    >
+      ⬆
+    </button>
+
+    <!-- Footer Section -->
+    <footer
+      data-aos="fade-in"
+      data-aos-duration="1000"
+      class="bg-pink-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300 py-10 px-6"
+    >
+      <div
+        class="container mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+      >
+        <!-- About Section -->
+        <div>
+          <h3 class="text-pink-700 text-lg font-semibold uppercase mb-3">
+            🌸 About Us
+          </h3>
+          <p class="text-sm leading-relaxed">
+            Empowering women through events, workshops, and performances that
+            inspire and uplift.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-pink-700 text-lg font-semibold uppercase mb-3">
+            🔗 Quick Links
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#events" class="hover:text-pink-500 transition-colors"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-pink-500 transition-colors"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="#workshops" class="hover:text-pink-500 transition-colors"
+                >Workshops</a
+              >
+            </li>
+            <li>
+              <a href="#blog" class="hover:text-pink-500 transition-colors"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-pink-700 text-lg font-semibold uppercase mb-3">
+            📍 Contact
+          </h3>
+          <p class="text-sm">
+            📧 Email:
+            <a
+              href="mailto:info@womensevent.com"
+              class="hover:text-pink-500 transition-colors"
+              >info@womensevent.com</a
+            >
+          </p>
+          <p class="text-sm">📍 Location: New York, USA</p>
+          <p class="text-sm">📞 Phone: +1 234 567 890</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-pink-700 text-lg font-semibold uppercase mb-3">
+            📧 Newsletter
+          </h3>
+          <p class="text-sm mb-3">Subscribe for updates & latest events.</p>
+          <form class="flex items-center space-x-2">
+            <input
+              type="email"
+              placeholder="Enter email"
+              class="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-pink-500 focus:outline-none"
+            />
+            <button
+              class="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="text-center text-sm text-gray-600 dark:text-gray-400 mt-8">
+        © 2025 Made with ❤️ All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
